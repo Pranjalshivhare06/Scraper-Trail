@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Bing Map Place Scraper",
+  "version": "1.0",
+  "description": "Scrape places from Bing Maps",
+  "permissions": ["activeTab", "scripting", "storage", "downloads"],
+  "host_permissions": ["https://www.bing.com/maps/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.bing.com/maps/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
